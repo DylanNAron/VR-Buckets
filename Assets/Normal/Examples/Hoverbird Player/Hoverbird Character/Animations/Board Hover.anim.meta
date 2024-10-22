@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 18b8276cdc57848c194bc37d072aca09
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 195224
+  packageName: Normcore - Realtime Multiplayer with Voice Chat for All Platforms
+  packageVersion: 2.1
+  assetPath: Assets/Normal/Examples/Hoverbird Player/Hoverbird Character/Animations/Board
+    Hover.anim
+  uploadId: 440250

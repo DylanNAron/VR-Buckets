@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: cec929e6874b9f34a8ff954244b7e748
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 195224
+  packageName: Normcore - Realtime Multiplayer with Voice Chat for All Platforms
+  packageVersion: 2.1
+  assetPath: Assets/Normal/Examples/Cube Player/Realtime + Cube Player.prefab
+  uploadId: 440250

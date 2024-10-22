@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 504cad0835ffa574d852d96986e49bc8
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 195224
+  packageName: Normcore - Realtime Multiplayer with Voice Chat for All Platforms
+  packageVersion: 2.1
+  assetPath: Assets/Normal/Examples/Blank Scene Template/Cubes/Purple.mat
+  uploadId: 440250

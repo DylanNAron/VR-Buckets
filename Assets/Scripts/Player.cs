@@ -3,26 +3,29 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private Realtime realtime;
-
     public int score = 0;
     private int consecutiveShots = 0;
+    private int playerID;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private RealtimeView realtimeView;
+
+
+    private void Awake()
     {
-        realtime = GetComponent<Realtime>();
+        realtimeView = GetComponent<RealtimeView>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        playerID = realtimeView.ownerIDInHierarchy;
     }
 
-    
-    public void OnSuccesfulShot()
+    public void OnSuccessfulShot()
     {
+        if (!realtimeView.isOwnedLocallyInHierarchy) return;
+
+        Debug.Log($"Player {playerID} scored!");
+
         consecutiveShots++;
 
         score += 1;
@@ -30,8 +33,10 @@ public class Player : MonoBehaviour
         if(consecutiveShots % 3 == 0)
         {
             score += 1;
-            Debug.Log($"Player {realtime.clientID} hit 3 in a row! Bonus Point!");
+            Debug.Log($"Player {playerID} hit 3 in a row! Bonus Point!");
         }
+
+        ScoreManager.Instance.UpdatePlayerScore(playerID, score);
     }
 
     public void OnMissedShot()
@@ -43,5 +48,10 @@ public class Player : MonoBehaviour
     {
         score = 0;
         consecutiveShots = 0;
+    }
+
+    public int GetPlayerID()
+    {
+        return playerID;
     }
 }

@@ -99,7 +99,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 262629807513107443}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 7c3f44ae46ed92040814519cfc50c884, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -295,7 +295,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  m_ThrowVelocityScale: 1.5
+  m_ThrowVelocityScale: 5
   m_ThrowAngularVelocityScale: 1
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
@@ -315,3 +315,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbdacee78bc9ba440ab71ff789fa7c66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lastPlayerId: -1

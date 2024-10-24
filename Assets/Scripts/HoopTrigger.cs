@@ -1,16 +1,23 @@
+using Normal.Realtime;
 using UnityEngine;
 
 public class HoopTrigger : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void OnTriggerEnter(Collider other)
     {
-        
-    }
+        BasketballController ball = other.GetComponent<BasketballController>();
+        if (ball != null)
+        {
+            int playerId = ball.GetLastPlayerId();
+            if (playerId != -1)
+            {
+                Player player = ScoreManager.FindPlayerByNormcoreId(playerId);
+                if (player != null)
+                {
+                    player.OnSuccessfulShot();
+                }
+            }
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

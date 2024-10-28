@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
             Debug.Log($"Player {playerID} hit 3 in a row! Bonus Point!");
         }
 
-        ScoreManager.Instance.UpdatePlayerScore(playerID, score);
+        ScoreManager.Instance.UpdatePlayerScore((uint)playerID, score);
     }
 
     public void OnMissedShot()

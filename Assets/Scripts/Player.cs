@@ -41,6 +41,10 @@ public class Player : MonoBehaviour
 
     public void OnMissedShot()
     {
+        if (!realtimeView.isOwnedLocallyInHierarchy) return;
+
+        Debug.Log($"Player {playerID} missed :(");
+
         consecutiveShots = 0;
     }
 

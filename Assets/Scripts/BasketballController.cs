@@ -17,7 +17,6 @@ public class BasketballController : MonoBehaviour
         xrGrabInteractable = GetComponent<XRGrabInteractable>();
 
         xrGrabInteractable.selectEntered.AddListener(OnGrabBall);
-        xrGrabInteractable.selectExited.AddListener(OnReleaseBall);
     }
 
     void OnGrabBall(SelectEnterEventArgs args)
@@ -26,13 +25,30 @@ public class BasketballController : MonoBehaviour
         lastPlayerId = realtimeTransform.ownerIDSelf;
     }
 
-    void OnReleaseBall(SelectExitEventArgs args)
+    private void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.CompareTag("Floor"))
+        {
+            if (lastPlayerId != -1)
+            {
+                Player player = ScoreManager.FindPlayerByNormcoreId(lastPlayerId);
+                if (player != null)
+                {
+                    player.OnMissedShot();
+                    ResetLastPlayerId();
+                }
+            }
+        }
     }
 
     public int GetLastPlayerId()
     {
         return lastPlayerId;
+    }
+
+    public void ResetLastPlayerId()
+    {
+        lastPlayerId = -1;
     }
 
     void OnDestroy()

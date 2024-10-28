@@ -3,6 +3,13 @@ using UnityEngine;
 
 public class HoopTrigger : MonoBehaviour
 {
+    private AudioSource audioSource;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         BasketballController ball = other.GetComponent<BasketballController>();
@@ -17,7 +24,13 @@ public class HoopTrigger : MonoBehaviour
                     player.OnSuccessfulShot();
                 }
             }
-        }
 
+            if(audioSource != null) 
+            {
+                audioSource.Play();
+            }
+
+            ball.ResetLastPlayerId();
+        }
     }
 }

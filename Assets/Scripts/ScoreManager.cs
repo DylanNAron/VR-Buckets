@@ -7,8 +7,6 @@ using UnityEngine;
 
 public class ScoreManager : RealtimeComponent<ScoreSyncModel>
 {
-    //private Dictionary<int, int> playerScores = new Dictionary<int, int>();
-
     [SerializeField]
     private TextMeshProUGUI scoreText;
 

@@ -104,4 +104,20 @@ public class ScoreManager : RealtimeComponent<ScoreSyncModel>
         }
         return null;
     }
+
+    public void ResetScores()
+    {
+        List<uint> keysToRemove = new List<uint>();
+
+        foreach (var entry in model.playerScores)
+        {
+            keysToRemove.Add(entry.Key);
+        }
+
+        foreach (var key in keysToRemove)
+        {
+            model.playerScores.Remove(key);
+        }
+
+    }
 }
